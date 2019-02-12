@@ -1,5 +1,7 @@
 package piazzoli.kevin.com.firebasechat.Entidades.Logica;
 
+import org.ocpsoft.prettytime.PrettyTime;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
@@ -50,7 +52,11 @@ public class LMensaje {
 
     public String fechaDeCreacionDelMensaje(){
         Date date = new Date(getCreatedTimestampLong());
+        PrettyTime prettyTime = new PrettyTime(new Date(),Locale.getDefault());
+        return prettyTime.format(date);
+        /*Date date = new Date(getCreatedTimestampLong());
         SimpleDateFormat sdf = new SimpleDateFormat("hh:mm:ss a", Locale.getDefault());//a pm o am
-        return sdf.format(date);
+        return sdf.format(date);*/
     }
+
 }

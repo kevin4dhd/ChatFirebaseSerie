@@ -8,14 +8,13 @@ import android.view.ViewGroup;
 
 import com.bumptech.glide.Glide;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import piazzoli.kevin.com.firebasechat.Entidades.Logica.LMensaje;
 import piazzoli.kevin.com.firebasechat.Entidades.Logica.LUsuario;
 import piazzoli.kevin.com.firebasechat.Holder.MensajeriaHolder;
+import piazzoli.kevin.com.firebasechat.Persistencia.UsuarioDAO;
 import piazzoli.kevin.com.firebasechat.R;
 
 /**
@@ -46,8 +45,13 @@ public class MensajeriaAdaptador extends RecyclerView.Adapter<MensajeriaHolder> 
 
     @Override
     public MensajeriaHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(c).inflate(R.layout.card_view_mensajes,parent,false);
-        return new MensajeriaHolder(v);
+        View view;
+        if(viewType==1){
+            view = LayoutInflater.from(c).inflate(R.layout.card_view_mensajes_emisor,parent,false);
+        }else{
+            view = LayoutInflater.from(c).inflate(R.layout.card_view_mensajes_receptor,parent,false);
+        }
+        return new MensajeriaHolder(view);
     }
 
     @Override
@@ -80,4 +84,17 @@ public class MensajeriaAdaptador extends RecyclerView.Adapter<MensajeriaHolder> 
         return listMensaje.size();
     }
 
+    @Override
+    public int getItemViewType(int position) {
+        if(listMensaje.get(position).getlUsuario()!=null){
+            if(listMensaje.get(position).getlUsuario().getKey().equals(UsuarioDAO.getInstancia().getKeyUsuario())){
+                return 1;
+            }else{
+                return -1;
+            }
+        }else{
+            return -1;
+        }
+        //return super.getItemViewType(position);
+    }
 }
