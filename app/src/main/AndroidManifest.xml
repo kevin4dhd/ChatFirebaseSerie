@@ -18,6 +18,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Activity.MenuActivity"></activity>
+        <activity android:name=".Activity.VerUsuariosActivity"></activity>
         <activity android:name=".Activity.RegistroActivity"></activity>
         <activity android:name=".Activity.MensajeriaActivity"></activity>
     </application>

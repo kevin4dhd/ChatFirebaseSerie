@@ -158,9 +158,9 @@ public class RegistroActivity extends AppCompatActivity {
                     @Override
                     public void onDateSet(DatePicker datePicker, int year, int mes, int dia) {
                         Calendar calendarResultado = Calendar.getInstance();
-                        calendar.set(Calendar.YEAR,year);
-                        calendar.set(Calendar.MONTH,mes);
-                        calendar.set(Calendar.DAY_OF_MONTH,dia);
+                        calendarResultado.set(Calendar.YEAR,year);
+                        calendarResultado.set(Calendar.MONTH,mes);
+                        calendarResultado.set(Calendar.DAY_OF_MONTH,dia);
                         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
                         Date date = calendarResultado.getTime();
                         String fechaDeNacimientoTexto = simpleDateFormat.format(date);

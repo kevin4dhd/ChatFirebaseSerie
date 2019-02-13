@@ -100,7 +100,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void nextActivity(){
-        startActivity(new Intent(LoginActivity.this,MensajeriaActivity.class));
+        startActivity(new Intent(LoginActivity.this,MenuActivity.class));
         finish();
     }
 

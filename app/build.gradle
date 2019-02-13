@@ -4,7 +4,7 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "piazzoli.kevin.com.firebasechat"
-        minSdkVersion 14
+        minSdkVersion 16
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -33,6 +33,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-database:16.0.6' //Base de Datos
     implementation 'com.google.firebase:firebase-storage:16.0.5'  //Base de Archivos
     implementation 'com.google.firebase:firebase-auth:16.1.0'
+    implementation 'com.firebaseui:firebase-ui-database:4.3.1'
 
     //Agregados
     implementation 'de.hdodenhof:circleimageview:2.2.0' //Imagen Circular
