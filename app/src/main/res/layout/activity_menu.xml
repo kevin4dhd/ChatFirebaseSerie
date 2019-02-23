@@ -10,4 +10,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="Ver usuarios"/>
+    <Button
+        android:id="@+id/btnCerrarSesion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Cerrar Sesion"/>
 </LinearLayout>

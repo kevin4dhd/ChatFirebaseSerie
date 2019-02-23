@@ -1,5 +1,6 @@
 package piazzoli.kevin.com.firebasechat.Activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -63,7 +64,9 @@ public class VerUsuariosActivity extends AppCompatActivity {
                 holder.getLayoutPrincipal().setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Toast.makeText(VerUsuariosActivity.this, "Key: "+lUsuario.getKey(), Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(VerUsuariosActivity.this,MensajeriaActivity.class);
+                        intent.putExtra("key_receptor",lUsuario.getKey());
+                        startActivity(intent);
                     }
                 });
 

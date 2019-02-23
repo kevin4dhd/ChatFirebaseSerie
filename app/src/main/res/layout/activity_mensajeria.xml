@@ -22,18 +22,8 @@
             android:id="@+id/nombre"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Kevin"
+            android:text="RECEPTOR"
             android:layout_gravity="center"/>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="end|center">
-            <Button
-                android:id="@+id/cerrarSesion"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:hint="Cerrar Sesion" />
-        </LinearLayout>
     </LinearLayout>
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rvMensajes"
